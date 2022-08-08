@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kadai0804</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if session[:user_id] %>
+    <a href="/">Home</a>
+    <%= link_to "logout", "/logout", method: :delete %>
+    <% else %>
+    <a href="/">Home</a>
+     <a href="/signup">signup</a>
+     <a href="/login">Login</a>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
